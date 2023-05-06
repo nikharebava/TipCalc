@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   button{
+        cursor: pointer;
+    }
+    a{
+        text-decoration: none;
+        color: darkblue;
+       
+    }
+
+    *{
+       -webkit-box-sizing: border-box;
+               box-sizing: border-box;
+    }
+ 
+    #main{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        row-gap: 50px;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        border: 3px solid darkblue;
+        width: 300px;
+        height: 300px;
+        padding: 20px;
+        margin: 50px auto 0;
+        
+    }
+    #result{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        row-gap: 15px;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        background-color: darkblue;
+        color: white;
+        font-weight: bold;
+        width: 300px;
+        height: 300px;
+        padding: 20px;
+        margin: 50px auto 0;
+        display: none;
+    
+    }
+    .bill{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        row-gap: 10px;
+    }
+    input{
+        color: darkblue;
+        border: 3px solid darkblue;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    #btn{
+        border: 3px solid darkblue;
+        color: darkblue;
+        width: 100px;
+        height: 30px;
+    }
+    result button{
+        width: 100px;
+        height: 30px;
+        background-color: white;
+        border: 3px solid ;
+    }
+    label{
+        color: darkblue;
+        font-weight: bold;
+        font-size: 20px;
+    }
+  
+</style>
+<body>
+    <section>
+        <div id="main"> 
+            <div class="bill">
+                <label for="bill">Enter bill amount:</label>
+          
+                <input id="bill" name="bill" type="number" >
+            </div>
+            <div class="bill">
+                <label for="tiprate">Enter tip rate:</label>
+           
+                <input id="tiprate" name="tiprate" type="number" >
+            </div>
+            <div>
+                <button id="btn">Calculate</button>
+            </div>
+           
+        </div>
+        <div id="result">
+            <p>Your Tip Amount is: <span id="tipamount"></span></p>
+            <p>Your Total Amount is: <span id="total"></span></p>
+            <button> <a href="calculator.html"> BACK </a></button>
+        </div>
+        
+    </section>
+    <script>
+       
+    btn.addEventListener('click', function(){
+        let result = document.getElementById('result')
+        let main = document.getElementById('main')
+        let bill = document.getElementById('bill');
+        let tipRate = document.getElementById('tiprate');
+        let tipAmount = document.getElementById('tipamount');
+        let total = document.getElementById('total');
+        let btn = document.getElementById('btn');
+        tipAmount.textContent = Number(bill.value) * Number(tipRate.value) / 100;
+        total.textContent=Number(bill.value) + Number(tipAmount.textContent)
+        main.style.display = 'none'
+        result.style.display = 'flex'
+       })
+
+        
+       
+    </script>
+</body>
+</html>
